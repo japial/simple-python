@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ATM Search</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+
+        .container {
+            width: 100%;
+        }
+
+        .content {
+            width: 60%;
+            margin: 0 auto;
+        }
+
+        .atm-list {
+            width: 100%;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .atm-list-item {
+            border: 1px solid #ddd;
+        }
+
+        .atm-search {
+            padding: 20px;
+            background-color: #EDEDFE;
+        }
+
+        input {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="content">
+        <div class="atm-list">
+            <h1>ATM List</h1>
+            <hr>
+            <div class="atm-search">
+                <form action="/" method="get">
+                    <input type="text" name="search" placeholder="search">
+                    <input type="submit" value="Search">
+                </form>
+            </div>
+                {% for atm in atm_list %}
+                <div class="atm-list-item">
+                    <h4>{{atm.booth}}</h4>
+                    <h5>{{atm.address}}</h5>
+                    <h6>{{atm.location}}</h6>
+                </div>
+                {% empty %}
+                  <div class="atm-list-item">
+                    <h3>No ATM Found</h3>
+                  </div>
+                {% endfor %}
+        </div>
+    </div>
+</div>
+</body>
+</html>
