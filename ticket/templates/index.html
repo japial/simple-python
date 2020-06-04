@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% if form.errors %}
+        <div class="notification is-danger">
+            অনুগ্রহ করে ফর্মটি সঠিক ভাবে পূরণ করুন।
+        </div>
+    {% endif %}
+
+    {% if ticket %}
+        {% include 'card.html' %}
+    {% else %}
+        <form method="POST">
+            {% csrf_token %}
+            <div class="field">
+                <label class="label"> নাম</label>
+                <div class="control">
+                    <input class="input" value="{{ request.POST.name }}" name="name" type="text" placeholder="আপনার পূর্ণ নাম">
+                </div>
+                 {% for error in form.errors.name %}
+                    <p class="help is-danger"> {{ error | escape }} </p>
+                {% endfor %}
+            </div>
+
+            <div class="field">
+                <label class="label">ইমেইল </label>
+                <div class="control has-icons-left has-icons-right">
+                    <input name="email" value="{{ request.POST.email }}" class="input" type="email" placeholder="ইমেইল ঠিকানা" value="">
+                    <span class="icon is-small is-left"><i class="fas fa-envelope"></i></span>
+                    <span class="icon is-small is-right"><i class="fas fa-exclamation-triangle"></i></span>
+                </div>
+                {% for error in form.errors.email %}
+                    <p class="help is-danger"> {{ error | escape }} </p>
+                {% endfor %}
+            </div>
+
+            <div class="field">
+                <label class="label">মোবাইল নম্বর</label>
+                <div class="control has-icons-left has-icons-right">
+                    <input name="phone" value="{{ request.POST.phone }}" type="text" class="input {% if form.errors.phone %} is-danger {% endif %}" placeholder="মোবাইল ফোন নম্বর">
+                    <span class="icon is-small is-left"><i class="fas fa-phone"></i></span>
+                </div>
+                {% for error in form.errors.phone %}
+                    <p class="help is-danger"> {{ error | escape }} </p>
+                {% endfor %}
+            </div>
+
+            <div class="field">
+                <div class="control">
+                    <label class="checkbox">
+                        <input type="checkbox">
+                        আমি সকল নিয়ম কানুন ও শর্তাবলী মেনে নিচ্ছি।
+                    </label>
+                </div>
+            </div>
+
+            <div class="field is-grouped">
+                <div class="control">
+                    <button class="button is-link"> ঠিক আছে</button>
+                </div>
+                <div class="control">
+                    <button class="button is-danger"> বাতিল</button>
+                </div>
+            </div>
+        </form>
+    {% endif %}
+
+{% endblock %}

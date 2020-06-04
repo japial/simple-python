@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Event</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <style>
+        @import url('https://fonts.maateen.me/siyam-rupali/font.css');
+
+        body, button, input, select, textarea {
+            font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Helvetica, Arial, SiyamRupali, sans-serif;
+        }
+
+        .py-center {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .feature {
+            min-height: 300px;
+        }
+    </style>
+</head>
+<body>
+
+<section class="hero is-info">
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns">
+                <div class="column">
+                    <div class="columns">
+                        <div class="column is-one-fifth">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1024px-Python-logo-notext.svg.png"
+                                 style="height: 70px"
+                                 alt="">
+
+                        </div>
+                        <div class="column">
+                            <h1 class="title">
+                                পাইকন ঢাকা ২০১৯
+                            </h1>
+                            <h2 class="subtitle">
+                                <span>বাংলাদেশের  বৃহত্তম পাইথন কনফারেন্স •  জানুয়ারী  ১, ২০১৯</span>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="column" style="text-align: center">
+                    <a class="button is-success is-large" href="#registration">রেজিস্ট্রেশন করুন</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="hero is-white">
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-half py-center feature">
+                    <i style="font-size: 500%" class="fas has-text-success fa-comment-alt"></i>
+                </div>
+                <div class="column py-center">
+                    <div class="has-text-right">
+                        <h1 class="title">বাংলাদেশের সেরা প্রোগ্রামারদের আড্ডা!</h1>
+                        <p> পাইকনে থাকছেন পুরনো পরিচিত মুখগুলোর পাশাপাশি নতুন ট্যালেন্ট ও আমাদের কমিউনিটির ভবিষ্যৎ।
+                            পাইথন জগতের নতুন সব খোঁজখবর নিতে ক্যালেন্ডার মার্ক করে রাখুন! পাইথন জগতের নতুন সব খোঁজখবর
+                            নিতে ক্যালেন্ডার মার্ক করে রাখুন!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="hero is-light">
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns">
+                <div class="column py-center">
+                    <div class="has-text-right">
+                        <h1 class="title"> রাজধানীর প্রাণকেন্দ্রে পাইথনপ্রেমীদের সমাবেশ!</h1>
+                        <p> পাইকনে থাকছেন পুরনো পরিচিত মুখগুলোর পাশাপাশি নতুন ট্যালেন্ট ও আমাদের কমিউনিটির ভবিষ্যৎ।
+                            পাইথন জগতের নতুন সব খোঁজখবর নিতে ক্যালেন্ডার মার্ক করে রাখুন! পাইথন জগতের নতুন সব খোঁজখবর
+                            নিতে ক্যালেন্ডার মার্ক করে রাখুন!</p>
+                    </div>
+                </div>
+                <div class="column is-half py-center feature">
+                    <i style="font-size: 500%" class="fas has-text-success fa-map-marker-alt"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<a name="registration"></a>
+<section class="section">
+    <div class="container">
+        <div class="columns">
+            <div class="column py-center" style="min-height: 220px;">
+                <i style="font-size: 500%" class="fas has-text-success fa-comment-alt"></i>
+                <i style="font-size: 500%" class="fas has-text-info fa-map-marker-alt"></i>
+                <i style="font-size: 500%" class="fas has-text-primary fa-microphone"></i>
+            </div>
+            <div class="column">
+                 {% block content %}
+                 {% endblock %}
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="footer">
+    <div class="content has-text-centered">
+        <p>
+            টেক মাস্টার্সের <a href="https://techmasterslive.com/course/django-webapp">জ্যাঙ্গো ওয়েব অ্যাপ্লিকেশন
+            ডেভেলপমেন্ট</a> কোর্সের অংশ হিসেবে তৈরি!
+        </p>
+    </div>
+</footer>
+</body>
+</html>
